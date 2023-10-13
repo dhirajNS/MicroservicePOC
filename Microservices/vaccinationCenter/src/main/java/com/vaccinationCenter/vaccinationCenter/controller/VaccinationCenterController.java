@@ -7,6 +7,8 @@ import com.vaccinationCenter.vaccinationCenter.model.RequiredResponse;
 import com.vaccinationCenter.vaccinationCenter.repository.CenterRepo;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +30,8 @@ public class VaccinationCenterController {
     public static final String VACCINE_SERVICE="vaccineService";
     private int attempt=1;
 
+    private static final Logger logger=LoggerFactory.getLogger(VaccinationCenterController.class);
+
     @PostMapping(path ="/add")
     public ResponseEntity<VaccinationDB> addVaccineCenter(@RequestBody VaccinationDB vaccinationCenter) {
 
@@ -43,11 +47,11 @@ public class VaccinationCenterController {
         //1st get vaccination center detail
         VaccinationDB center  = centerRepo.findById(id).get();
         requiredResponse.setCenter(center);
-
+        logger.info("Hi beofre rest call");
         // then get all citizen registerd to vaccination center
         System.out.println("retry method called "+attempt++ +" times "+" at "+new Date());
         java.util.List<Citizen> listOfCitizens = restTemplate.getForObject("http://CITIZEN-SERVICE/citizen/id/"+id, List.class);
-
+        logger.info("Hi after rest call");
         requiredResponse.setCitizens(listOfCitizens);
         return new ResponseEntity<RequiredResponse>(requiredResponse, HttpStatus.OK);
     }
