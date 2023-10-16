@@ -1,6 +1,7 @@
 server:
   port: 8083
-
+logging:
+  file: /home/neosoft/Desktop/micro.log
 spring:
   application:
     name: API_GATEWAY

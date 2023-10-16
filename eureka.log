@@ -1,0 +1,72 @@
+2023-10-16 17:31:02.099  INFO 12326 --- [main] c.e.E.EurekaServerApplication            : Starting EurekaServerApplication using Java 11.0.19 on neosoft-Latitude-E7250 with PID 12326 (/home/neosoft/Downloads/MicroservicePOC/Microservices/EurekaServer (1)/EurekaServer/target/classes started by neosoft in /home/neosoft/Downloads/MicroservicePOC)
+2023-10-16 17:31:02.117  INFO 12326 --- [main] c.e.E.EurekaServerApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-10-16 17:31:48.555  INFO 12326 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3e248556-b6ed-3feb-89f3-8ae2ef168458
+2023-10-16 17:31:52.524  INFO 12326 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
+2023-10-16 17:31:52.603  INFO 12326 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-16 17:31:52.604  INFO 12326 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-16 17:31:53.254  INFO 12326 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-16 17:31:53.256  INFO 12326 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 50583 ms
+2023-10-16 17:31:56.191  INFO 12326 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.4 05/24/2017 03:20 PM'
+2023-10-16 17:31:56.683  INFO 12326 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2023-10-16 17:31:56.693  INFO 12326 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2023-10-16 17:31:58.864  INFO 12326 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2023-10-16 17:31:58.866  INFO 12326 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2023-10-16 17:33:14.845  INFO 12326 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses Jersey
+2023-10-16 17:33:15.952  WARN 12326 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-10-16 17:33:16.098  INFO 12326 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-10-16 17:33:16.392  INFO 12326 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-10-16 17:33:16.393  INFO 12326 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2023-10-16 17:33:16.493  INFO 12326 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1697457796491 with initial instances count: 0
+2023-10-16 17:33:16.821  INFO 12326 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2023-10-16 17:33:16.866  INFO 12326 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
+2023-10-16 17:33:18.730  INFO 12326 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2023-10-16 17:33:18.730  INFO 12326 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2023-10-16 17:33:18.731  INFO 12326 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2023-10-16 17:33:18.731  INFO 12326 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2023-10-16 17:33:19.103  INFO 12326 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
+2023-10-16 17:33:19.148  INFO 12326 --- [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2023-10-16 17:33:19.153  INFO 12326 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+2023-10-16 17:33:19.210  INFO 12326 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-16 17:33:19.359  INFO 12326 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application UNKNOWN with eureka with status UP
+2023-10-16 17:33:19.419  INFO 12326 --- [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2023-10-16 17:33:19.421  INFO 12326 --- [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2023-10-16 17:33:19.426  INFO 12326 --- [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2023-10-16 17:33:19.426  INFO 12326 --- [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2023-10-16 17:33:19.427  INFO 12326 --- [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2023-10-16 17:33:19.443  INFO 12326 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8761 (http) with context path ''
+2023-10-16 17:33:19.463  INFO 12326 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+2023-10-16 17:33:19.479  INFO 12326 --- [Thread-9] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2023-10-16 17:33:19.585  INFO 12326 --- [main] c.e.E.EurekaServerApplication            : Started EurekaServerApplication in 140.858 seconds (JVM running for 143.125)
+2023-10-16 17:33:48.424  INFO 12326 --- [http-nio-8761-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-16 17:33:48.426  INFO 12326 --- [http-nio-8761-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-16 17:33:48.429  INFO 12326 --- [http-nio-8761-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-10-16 17:33:48.488  WARN 12326 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: VACCINATION-CENTER-SERVICE - 10.0.103.136:VACCINATION-CENTER-SERVICE:8082
+2023-10-16 17:33:48.489  WARN 12326 --- [http-nio-8761-exec-2] c.n.eureka.resources.InstanceResource    : Not Found (Renew): VACCINATION-CENTER-SERVICE - 10.0.103.136:VACCINATION-CENTER-SERVICE:8082
+2023-10-16 17:33:48.771  INFO 12326 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 with status UP (replication=false)
+2023-10-16 17:33:48.778  INFO 12326 --- [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 with status UP (replication=false)
+2023-10-16 17:33:49.389  WARN 12326 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : There is an existing lease and the existing lease's dirty timestamp 1697457828593 is greater than the one that is being registered 1697457798216
+2023-10-16 17:33:49.389  WARN 12326 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Using the existing instanceInfo instead of the new instanceInfo as the registrant
+2023-10-16 17:33:49.390  INFO 12326 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 with status UP (replication=true)
+2023-10-16 17:34:19.449  INFO 12326 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2023-10-16 17:35:19.449  INFO 12326 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2023-10-16 17:36:19.450  INFO 12326 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2023-10-16 17:37:19.449  INFO 12326 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2023-10-16 17:38:19.449  INFO 12326 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2023-10-16 17:39:19.450  INFO 12326 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2023-10-16 17:40:19.449  INFO 12326 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2023-10-16 17:41:19.449  INFO 12326 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2023-10-16 17:42:19.449  INFO 12326 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2023-10-16 17:43:01.215  INFO 12326 --- [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080 with status UP (replication=false)
+2023-10-16 17:43:01.737  INFO 12326 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080 with status UP (replication=true)
+2023-10-16 17:43:19.457  INFO 12326 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
+2023-10-16 17:43:31.497  INFO 12326 --- [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 with status DOWN (replication=false)
+2023-10-16 17:43:31.538  INFO 12326 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080 with status DOWN (replication=false)
+2023-10-16 17:43:31.590  INFO 12326 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application UNKNOWN with eureka with status DOWN
+2023-10-16 17:43:31.771  INFO 12326 --- [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
+2023-10-16 17:43:31.795  INFO 12326 --- [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2023-10-16 17:43:31.872  INFO 12326 --- [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
+2023-10-16 17:43:31.872  INFO 12326 --- [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
+2023-10-16 17:43:31.873  INFO 12326 --- [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2023-10-16 17:43:31.886  INFO 12326 --- [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
+2023-10-16 17:43:31.900  INFO 12326 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-10-16 17:43:31.901  INFO 12326 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

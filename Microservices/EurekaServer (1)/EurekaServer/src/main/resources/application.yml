@@ -1,5 +1,8 @@
 server:
   port: 8761
+logging:
+  file:
+    name: eureka.log
 eureka:
   client:
     fetch-registry: false
