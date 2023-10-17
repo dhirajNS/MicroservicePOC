@@ -11,8 +11,10 @@ import io.github.resilience4j.retry.annotation.Retry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.*;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -41,29 +43,22 @@ public class VaccinationCenterController {
         return new ResponseEntity<>(vaccinationCenterAdded, HttpStatus.OK);
     }
 
-    @GetMapping(path = "/id/{id}")
-    //@CircuitBreaker(name=VACCINE_SERVICE,fallbackMethod = "handleFallBack")
-    //@Retry(name = VACCINE_SERVICE,fallbackMethod = "handleFallBack")
-    @Retry(name = VACCINE_SERVICE)     //when using exception handling and there is no fallback in retry
-    public ResponseEntity<RequiredResponse> getAllDadaBasedonCenterId(@PathVariable Integer id){
-
-            RequiredResponse requiredResponse = new RequiredResponse();
-        //try {
-            //1st get vaccination center detail
-            VaccinationDB center = centerRepo.findById(id).get();
-            requiredResponse.setCenter(center);
-            logger.info("Hi before rest call******************");
-            // then get all citizen registerd to vaccination center
-            java.util.List<Citizen> listOfCitizens = restTemplate.getForObject("http://CITIZEN-SERVICE/citizen/id/" + id, List.class);
-            requiredResponse.setCitizens(listOfCitizens);
-            logger.info("Hi after rest call>>{}",listOfCitizens);
-
-            return new ResponseEntity<>(requiredResponse, HttpStatus.OK);
-//        }catch(Exception e){
-//            logger.error("Hi with error  ******>>"+id+"<><><><>"+e.getMessage());
-//            return new ResponseEntity<RequiredResponse>(requiredResponse, HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-    }
+//    @GetMapping(path = "/id/{id}")
+//    //@CircuitBreaker(name=VACCINE_SERVICE,fallbackMethod = "handleFallBack")
+//    //@Retry(name = VACCINE_SERVICE,fallbackMethod = "handleFallBack")
+//    @Retry(name = VACCINE_SERVICE)     //when using exception handling and there is no fallback in retry
+//    public ResponseEntity<RequiredResponse> getAllDadaBasedonCenterId(@PathVariable Integer id){
+//
+//            RequiredResponse requiredResponse = new RequiredResponse();
+//            VaccinationDB center = centerRepo.findById(id).get();
+//            requiredResponse.setCenter(center);
+//            logger.info("Hi before rest call******************");
+//            // then get all citizen registerd to vaccination center
+//            java.util.List<Citizen> listOfCitizens = restTemplate.getForObject("http://CITIZEN-SERVICE/citizen/id/" + id, List.class);
+//            requiredResponse.setCitizens(listOfCitizens);
+//            logger.info("Hi after rest call>>{}",listOfCitizens);
+//            return new ResponseEntity<>(requiredResponse, HttpStatus.OK);
+//    }
 
 //    public ResponseEntity<RequiredResponse> handleFallBack(@PathVariable Integer id){
 //        RequiredResponse requiredResponse =  new RequiredResponse();
@@ -81,8 +76,43 @@ public class VaccinationCenterController {
         return new ResponseEntity<RequiredResponse>(requiredResponse, HttpStatus.OK);
     }
 
+    @GetMapping(path = "/id/{id}")
+    //@CircuitBreaker(name=VACCINE_SERVICE,fallbackMethod = "handleFallBack")
+    //@Retry(name = VACCINE_SERVICE,fallbackMethod = "handleFallBack")
+    @Retry(name = VACCINE_SERVICE)     //when using exception handling and there is no fallback in retry
+    public ResponseEntity<RequiredResponse> getAllDadaBasedonCenterId(@PathVariable Integer id){
+
+        RequiredResponse requiredResponse = new RequiredResponse();
+        VaccinationDB center = centerRepo.findById(id).get();
+        requiredResponse.setCenter(center);
+        logger.info("Hi before rest call******************");
+        // then get all citizen registerd to vaccination center
 
 
+        String targetUrl = "http://localhost:8080/citizen/id/" + id;
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        String username = authentication.getName();
+//        Object password1 = authentication.getCredentials();
+        String username = "Java Techie";
+        String password="Password";
+        // Create a HttpHeaders object with Basic Authentication credentials
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBasicAuth(username, password);
+
+        // Create an HttpEntity with the headers
+        HttpEntity<Object> entity = new HttpEntity<>(headers);
+
+        // Make the REST request with Basic Authentication
+        java.util.List<Citizen> listOfCitizens  = new RestTemplate().exchange(
+                targetUrl,
+                HttpMethod.GET,
+                entity, // Pass the HttpEntity with Basic Authentication headers
+                List.class // Specify the response type
+        ).getBody();
+        requiredResponse.setCitizens(listOfCitizens);
+        logger.info("Hi after rest call>>{}",listOfCitizens);
+        return new ResponseEntity<>(requiredResponse, HttpStatus.OK);
+    }
 
 
 }
