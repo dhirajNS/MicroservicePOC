@@ -3,6 +3,7 @@ package com.vaccinationCenter.vaccinationCenter.controller;
 //import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.vaccinationCenter.vaccinationCenter.entity.VaccinationDB;
 import com.vaccinationCenter.vaccinationCenter.model.Citizen;
+import com.vaccinationCenter.vaccinationCenter.model.CitizenWrapper;
 import com.vaccinationCenter.vaccinationCenter.model.RequiredResponse;
 import com.vaccinationCenter.vaccinationCenter.repository.CenterRepo;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
@@ -42,25 +43,26 @@ public class VaccinationCenterController {
 
     @GetMapping(path = "/id/{id}")
     //@CircuitBreaker(name=VACCINE_SERVICE,fallbackMethod = "handleFallBack")
-    @Retry(name = VACCINE_SERVICE,fallbackMethod = "handleFallBack")
+    //@Retry(name = VACCINE_SERVICE,fallbackMethod = "handleFallBack")
+    @Retry(name = VACCINE_SERVICE)     //when using exception handling and there is no fallback in retry
     public ResponseEntity<RequiredResponse> getAllDadaBasedonCenterId(@PathVariable Integer id){
 
             RequiredResponse requiredResponse = new RequiredResponse();
-        try {
+        //try {
             //1st get vaccination center detail
             VaccinationDB center = centerRepo.findById(id).get();
             requiredResponse.setCenter(center);
-            logger.info("Hi beofre rest call******************");
+            logger.info("Hi before rest call******************");
             // then get all citizen registerd to vaccination center
-            //System.out.println("retry method called " + attempt++ + " times " + " at " + new Date());
             java.util.List<Citizen> listOfCitizens = restTemplate.getForObject("http://CITIZEN-SERVICE/citizen/id/" + id, List.class);
             requiredResponse.setCitizens(listOfCitizens);
-            logger.info("Hi after rest call"+requiredResponse);
-            return new ResponseEntity<RequiredResponse>(requiredResponse, HttpStatus.OK);
-        }catch(Exception e){
-            logger.error("Hi with error  ******>>"+id+"<><><><>"+e.getMessage());
-            return new ResponseEntity<RequiredResponse>(requiredResponse, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+            logger.info("Hi after rest call>>{}",listOfCitizens);
+
+            return new ResponseEntity<>(requiredResponse, HttpStatus.OK);
+//        }catch(Exception e){
+//            logger.error("Hi with error  ******>>"+id+"<><><><>"+e.getMessage());
+//            return new ResponseEntity<RequiredResponse>(requiredResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
     }
 
 //    public ResponseEntity<RequiredResponse> handleFallBack(@PathVariable Integer id){

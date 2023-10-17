@@ -36,7 +36,7 @@ resilience4j:
     instances:
       vaccineService:
         maxRetryAttempts: 5
-        waitDuration: 10s
+        waitDuration: 2s
 
 management:
   health:

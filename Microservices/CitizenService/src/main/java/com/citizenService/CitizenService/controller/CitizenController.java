@@ -27,19 +27,18 @@ public class CitizenController {
 
     @RequestMapping(path ="/id/{id}")
     public ResponseEntity<java.util.List<Citizen>> getById(@PathVariable Integer id) {
-        try {
+        //try {
             logger.info("Before success in Citizen");
             List<Citizen> listCitizen = repo.findByVaccinationCenterId(id);
-//            Citizen citizen=null;
-//            citizen.setId(1);
+            Citizen citizen=null;   //purposely added exception for recreating null pointer exception
+            citizen.setId(1);
             logger.info("After success in Citizen");
             return new ResponseEntity<>(listCitizen, HttpStatus.OK);
-        }catch (Exception e){
-            logger.error("Something went wrong>>>"+e.getMessage());
-            return new ResponseEntity<>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+//        }catch (Exception e){
+//            logger.error("Something went wrong>>>{}",e.getMessage());
+//            return new ResponseEntity<>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
+//
     }
-
     @PostMapping(path ="/add")
     public ResponseEntity<Citizen> addCitizen(@RequestBody Citizen newCitizen) {
 
