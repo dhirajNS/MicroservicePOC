@@ -13,11 +13,21 @@ spring:
             lb://CITIZEN-SERVICE
           predicates:
             - Path=/citizen/**
+          filters:
+            - AuthenticationFilter
 
         - id: VACCINATION-CENTER-SERVICE
           uri:
             lb://VACCINATION-CENTER-SERVICE
           predicates:
             - Path=/vaccinationcenter/**
+          filters:
+            - AuthenticationFilter
+
+        - id: IDENTITY-SERVICE
+          uri:
+            lb://IDENTITY-SERVICE
+          predicates:
+            - Path=/auth/**
 
 

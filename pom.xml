@@ -12,6 +12,7 @@
         <module>Microservices/CitizenService</module>
         <module>Microservices/EurekaServer (1)/EurekaServer</module>
         <module>Microservices/vaccinationCenter</module>
+        <module>Microservices/identity service/identity-service</module>
     </modules>
 
     <properties>
