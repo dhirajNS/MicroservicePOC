@@ -1,333 +1,269 @@
-2023-10-16 17:30:48.043  INFO 12239 --- [main] c.v.v.VaccinationCenterApplication       : Starting VaccinationCenterApplication using Java 11.0.19 on neosoft-Latitude-E7250 with PID 12239 (/home/neosoft/Downloads/MicroservicePOC/Microservices/vaccinationCenter/target/classes started by neosoft in /home/neosoft/Downloads/MicroservicePOC)
-2023-10-16 17:30:48.074  INFO 12239 --- [main] c.v.v.VaccinationCenterApplication       : No active profile set, falling back to 1 default profile: "default"
-2023-10-16 17:30:52.507  INFO 12239 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-10-16 17:30:53.104  INFO 12239 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 539 ms. Found 1 JPA repository interfaces.
-2023-10-16 17:30:54.552  INFO 12239 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=12a58240-6b2d-34ec-a404-bba73e47ed1f
-2023-10-16 17:30:57.552  INFO 12239 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-10-16 17:30:57.577  INFO 12239 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-10-16 17:30:57.577  INFO 12239 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-2023-10-16 17:30:58.128  INFO 12239 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-10-16 17:30:58.129  INFO 12239 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9834 ms
-2023-10-16 17:30:59.861  INFO 12239 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-10-16 17:31:00.020  INFO 12239 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-10-16 17:31:00.819  INFO 12239 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-10-16 17:31:01.339  INFO 12239 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-10-16 17:31:04.277  INFO 12239 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-10-16 17:31:04.439  INFO 12239 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-10-16 17:31:47.375  INFO 12239 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-10-16 17:31:47.821  INFO 12239 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-10-16 17:31:54.721  WARN 12239 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-10-16 17:32:07.026  INFO 12239 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2023-10-16 17:32:09.566  WARN 12239 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2023-10-16 17:32:09.699  INFO 12239 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-10-16 17:32:10.616  INFO 12239 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2023-10-16 17:32:13.327  INFO 12239 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2023-10-16 17:32:13.381  INFO 12239 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-16 17:32:14.673  INFO 12239 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2023-10-16 17:32:14.693  INFO 12239 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2023-10-16 17:32:14.697  INFO 12239 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2023-10-16 17:32:14.698  INFO 12239 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2023-10-16 17:32:14.698  INFO 12239 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2023-10-16 17:32:14.699  INFO 12239 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2023-10-16 17:32:14.699  INFO 12239 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2023-10-16 17:33:18.160  INFO 12239 --- [main] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on GET request for "http://localhost:8761/eureka/apps/": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused) stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplications(RestTemplateEurekaHttpClient.java:135)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
-	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
-	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
-	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:441)
-	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:283)
-	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:279)
-	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:66)
-	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:295)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:633)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:374)
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:376)
-	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:371)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:127)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:115)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
-	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:485)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$f611cf35.getEurekaClient(<generated>)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:54)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:38)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:83)
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:179)
-	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
-	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:357)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:156)
-	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:124)
-	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:938)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
-	at com.vaccinationCenter.vaccinationCenter.VaccinationCenterApplication.main(VaccinationCenterApplication.java:15)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
-	... 68 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
-	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
-	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.base/java.net.Socket.connect(Socket.java:608)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 81 more
+2023-10-19 12:50:55.610  INFO 160335 --- [main] c.v.v.VaccinationCenterApplication       : Starting VaccinationCenterApplication using Java 11.0.19 on neosoft-Latitude-E7250 with PID 160335 (/home/neosoft/Downloads/MicroservicePOC/Microservices/vaccinationCenter/target/classes started by neosoft in /home/neosoft/Downloads/MicroservicePOC)
+2023-10-19 12:50:55.641  INFO 160335 --- [main] c.v.v.VaccinationCenterApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-19 12:50:58.924  INFO 160335 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-19 12:50:59.413  INFO 160335 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 458 ms. Found 1 JPA repository interfaces.
+2023-10-19 12:51:00.335  INFO 160335 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=dd52ad9c-43fc-396b-b51e-1f67302086a1
+2023-10-19 12:51:03.445  INFO 160335 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2023-10-19 12:51:03.476  INFO 160335 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-19 12:51:03.476  INFO 160335 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2023-10-19 12:51:03.925  INFO 160335 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-19 12:51:03.926  INFO 160335 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8078 ms
+2023-10-19 12:51:05.592  INFO 160335 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-19 12:51:05.713  INFO 160335 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-19 12:51:06.220  INFO 160335 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-19 12:51:06.817  INFO 160335 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-19 12:51:07.955  INFO 160335 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-19 12:51:08.001  INFO 160335 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-10-19 12:51:10.152  INFO 160335 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-19 12:51:10.207  INFO 160335 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 12:51:12.406  WARN 160335 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-19 12:51:17.161  WARN 160335 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-2023-10-16 17:33:18.162  WARN 12239 --- [main] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
-2023-10-16 17:33:18.163  INFO 12239 --- [main] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
-	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
-	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
-	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:441)
-	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:283)
-	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:279)
-	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:66)
-	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:295)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:633)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:374)
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:376)
-	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:371)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:127)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:115)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
-	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:485)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$f611cf35.getEurekaClient(<generated>)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:54)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:38)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:83)
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:179)
-	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
-	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:357)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:156)
-	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:124)
-	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:938)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
-	at com.vaccinationCenter.vaccinationCenter.VaccinationCenterApplication.main(VaccinationCenterApplication.java:15)
+Using generated security password: 49f1cd87-739c-49e3-bff9-c862a334c3c2
 
-2023-10-16 17:33:18.164  INFO 12239 --- [main] com.netflix.discovery.DiscoveryClient    : Initial registry fetch from primary servers failed
-2023-10-16 17:33:18.166  WARN 12239 --- [main] com.netflix.discovery.DiscoveryClient    : Using default backup registry implementation which does not do anything.
-2023-10-16 17:33:18.167  INFO 12239 --- [main] com.netflix.discovery.DiscoveryClient    : Initial registry fetch from backup servers failed
-2023-10-16 17:33:18.178  INFO 12239 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2023-10-16 17:33:18.183  INFO 12239 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2023-10-16 17:33:18.194  INFO 12239 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1697457798192 with initial instances count: 0
-2023-10-16 17:33:18.216  INFO 12239 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application VACCINATION-CENTER-SERVICE with eureka with status UP
-2023-10-16 17:33:18.219  INFO 12239 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697457798219, current=UP, previous=STARTING]
-2023-10-16 17:33:18.236  INFO 12239 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082: registering service...
-2023-10-16 17:33:18.451  INFO 12239 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-10-16 17:33:18.457  INFO 12239 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
-2023-10-16 17:33:18.493  INFO 12239 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/VACCINATION-CENTER-SERVICE": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused) stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/VACCINATION-CENTER-SERVICE": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
-	... 22 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
-	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
-	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.base/java.net.Socket.connect(Socket.java:608)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 35 more
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2023-10-16 17:33:18.498  WARN 12239 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/VACCINATION-CENTER-SERVICE": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
-2023-10-16 17:33:18.516  WARN 12239 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - registration failed Cannot execute request on any known server
+2023-10-19 12:51:17.872  INFO 160335 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-19 12:51:17.929  INFO 160335 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@579b1d86, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d28ac23, org.springframework.security.web.context.SecurityContextPersistenceFilter@46823e8, org.springframework.security.web.header.HeaderWriterFilter@4d08fee2, org.springframework.web.filter.CorsFilter@6e18bc2f, org.springframework.security.web.csrf.CsrfFilter@60580e42, org.springframework.security.web.authentication.logout.LogoutFilter@30c96ea9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@430abcad, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@12b0440b, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@28d48616, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@28817763, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@34329e03, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c8d382e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@27acd9a7, org.springframework.security.web.session.SessionManagementFilter@39384ba6, org.springframework.security.web.access.ExceptionTranslationFilter@20bc72af, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3c51dec5]
+2023-10-19 12:51:18.266  INFO 160335 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-10-19 12:51:18.556  WARN 160335 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-10-19 12:51:18.630  INFO 160335 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-10-19 12:51:18.774  INFO 160335 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-10-19 12:51:18.784  INFO 160335 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-19 12:51:18.831  INFO 160335 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-10-19 12:51:18.831  INFO 160335 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-10-19 12:51:18.831  INFO 160335 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-10-19 12:51:18.832  INFO 160335 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-10-19 12:51:18.832  INFO 160335 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-10-19 12:51:18.832  INFO 160335 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-10-19 12:51:18.832  INFO 160335 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-10-19 12:51:19.343  INFO 160335 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-10-19 12:51:19.348  INFO 160335 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-10-19 12:51:19.353  INFO 160335 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-10-19 12:51:19.365  INFO 160335 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1697700079363 with initial instances count: 0
+2023-10-19 12:51:19.385  INFO 160335 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application VACCINATION-CENTER-SERVICE with eureka with status UP
+2023-10-19 12:51:19.386  INFO 160335 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697700079386, current=UP, previous=STARTING]
+2023-10-19 12:51:19.390  INFO 160335 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082: registering service...
+2023-10-19 12:51:19.447  INFO 160335 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2023-10-19 12:51:19.448  INFO 160335 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2023-10-19 12:51:19.498  INFO 160335 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - registration status: 204
+2023-10-19 12:51:19.536  INFO 160335 --- [main] c.v.v.VaccinationCenterApplication       : Started VaccinationCenterApplication in 25.562 seconds (JVM running for 26.552)
+2023-10-19 12:51:49.348  INFO 160335 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-10-19 12:51:49.348  INFO 160335 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-10-19 12:51:49.349  INFO 160335 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-10-19 12:51:49.349  INFO 160335 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-10-19 12:51:49.349  INFO 160335 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-10-19 12:51:49.349  INFO 160335 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2023-10-19 12:51:49.349  INFO 160335 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-10-19 12:51:49.369  INFO 160335 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-10-19 12:54:24.717  INFO 160335 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-19 12:54:24.718  INFO 160335 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-19 12:54:24.723  INFO 160335 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2023-10-19 12:56:18.835  INFO 160335 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-19 12:58:31.986  INFO 160335 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application VACCINATION-CENTER-SERVICE with eureka with status DOWN
+2023-10-19 12:58:31.987  INFO 160335 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697700511987, current=DOWN, previous=UP]
+2023-10-19 12:58:31.988  INFO 160335 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082: registering service...
+2023-10-19 12:58:32.009  INFO 160335 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - registration status: 204
+2023-10-19 12:58:32.028  INFO 160335 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 12:58:32.034  INFO 160335 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-19 12:58:32.068  INFO 160335 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-19 12:58:32.071  INFO 160335 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-10-19 12:58:35.074  INFO 160335 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-10-19 12:58:35.084  INFO 160335 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - deregister  status: 200
+2023-10-19 12:58:35.097  INFO 160335 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-10-19 12:59:23.187  INFO 161367 --- [main] c.v.v.VaccinationCenterApplication       : Starting VaccinationCenterApplication using Java 11.0.19 on neosoft-Latitude-E7250 with PID 161367 (/home/neosoft/Downloads/MicroservicePOC/Microservices/vaccinationCenter/target/classes started by neosoft in /home/neosoft/Downloads/MicroservicePOC)
+2023-10-19 12:59:23.211  INFO 161367 --- [main] c.v.v.VaccinationCenterApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-19 12:59:25.619  INFO 161367 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-19 12:59:26.056  INFO 161367 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 411 ms. Found 1 JPA repository interfaces.
+2023-10-19 12:59:26.697  INFO 161367 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=dd52ad9c-43fc-396b-b51e-1f67302086a1
+2023-10-19 12:59:27.719  INFO 161367 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2023-10-19 12:59:27.733  INFO 161367 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-19 12:59:27.734  INFO 161367 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2023-10-19 12:59:27.919  INFO 161367 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-19 12:59:27.920  INFO 161367 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4569 ms
+2023-10-19 12:59:28.745  INFO 161367 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-19 12:59:28.823  INFO 161367 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-19 12:59:29.126  INFO 161367 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-19 12:59:29.287  INFO 161367 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-19 12:59:29.842  INFO 161367 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-19 12:59:29.872  INFO 161367 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-10-19 12:59:30.969  INFO 161367 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-19 12:59:30.987  INFO 161367 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 12:59:32.070  WARN 161367 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-19 12:59:33.925  WARN 161367 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.17.jar:1.10.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Using generated security password: dcd37157-1048-45d4-9aac-ea0de2d24724
 
-2023-10-16 17:33:18.522  WARN 12239 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.17.jar:1.10.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+2023-10-19 12:59:34.270  INFO 161367 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-19 12:59:34.319  INFO 161367 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6abdead7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@412b90cc, org.springframework.security.web.context.SecurityContextPersistenceFilter@46823e8, org.springframework.security.web.header.HeaderWriterFilter@4d08fee2, org.springframework.web.filter.CorsFilter@6232cde5, org.springframework.security.web.csrf.CsrfFilter@60580e42, org.springframework.security.web.authentication.logout.LogoutFilter@30c96ea9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4ff7de80, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@12b0440b, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4b75d640, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@53b42a0d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@34329e03, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c8d382e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e9b66ab, org.springframework.security.web.session.SessionManagementFilter@39384ba6, org.springframework.security.web.access.ExceptionTranslationFilter@20bc72af, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3c51dec5]
+2023-10-19 12:59:34.565  INFO 161367 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-10-19 12:59:34.866  WARN 161367 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-10-19 12:59:34.938  INFO 161367 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-10-19 12:59:35.056  INFO 161367 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-10-19 12:59:35.062  INFO 161367 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-19 12:59:35.109  INFO 161367 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-10-19 12:59:35.109  INFO 161367 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-10-19 12:59:35.109  INFO 161367 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-10-19 12:59:35.109  INFO 161367 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-10-19 12:59:35.110  INFO 161367 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-10-19 12:59:35.110  INFO 161367 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-10-19 12:59:35.110  INFO 161367 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-10-19 12:59:35.604  INFO 161367 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-10-19 12:59:35.609  INFO 161367 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-10-19 12:59:35.616  INFO 161367 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-10-19 12:59:35.623  INFO 161367 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1697700575622 with initial instances count: 2
+2023-10-19 12:59:35.635  INFO 161367 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application VACCINATION-CENTER-SERVICE with eureka with status UP
+2023-10-19 12:59:35.636  INFO 161367 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697700575636, current=UP, previous=STARTING]
+2023-10-19 12:59:35.639  INFO 161367 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082: registering service...
+2023-10-19 12:59:35.687  INFO 161367 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2023-10-19 12:59:35.689  INFO 161367 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2023-10-19 12:59:35.703  INFO 161367 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - registration status: 204
+2023-10-19 12:59:35.746  INFO 161367 --- [main] c.v.v.VaccinationCenterApplication       : Started VaccinationCenterApplication in 13.786 seconds (JVM running for 14.918)
+2023-10-19 13:01:44.039  INFO 161367 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-19 13:01:44.040  INFO 161367 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-19 13:01:44.044  INFO 161367 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-10-19 13:04:35.114  INFO 161367 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-19 13:04:57.300  INFO 161367 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application VACCINATION-CENTER-SERVICE with eureka with status DOWN
+2023-10-19 13:04:57.301  INFO 161367 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697700897301, current=DOWN, previous=UP]
+2023-10-19 13:04:57.301  INFO 161367 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082: registering service...
+2023-10-19 13:04:57.316  INFO 161367 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - registration status: 204
+2023-10-19 13:04:57.343  INFO 161367 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 13:04:57.350  INFO 161367 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-19 13:04:57.371  INFO 161367 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-19 13:04:57.374  INFO 161367 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-10-19 13:05:00.381  INFO 161367 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-10-19 13:05:00.389  INFO 161367 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - deregister  status: 200
+2023-10-19 13:05:00.400  INFO 161367 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-10-19 13:05:09.026  INFO 161886 --- [main] c.v.v.VaccinationCenterApplication       : Starting VaccinationCenterApplication using Java 11.0.19 on neosoft-Latitude-E7250 with PID 161886 (/home/neosoft/Downloads/MicroservicePOC/Microservices/vaccinationCenter/target/classes started by neosoft in /home/neosoft/Downloads/MicroservicePOC)
+2023-10-19 13:05:09.032  INFO 161886 --- [main] c.v.v.VaccinationCenterApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-19 13:05:11.662  INFO 161886 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-19 13:05:12.034  INFO 161886 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 356 ms. Found 1 JPA repository interfaces.
+2023-10-19 13:05:13.068  INFO 161886 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=dd52ad9c-43fc-396b-b51e-1f67302086a1
+2023-10-19 13:05:14.847  INFO 161886 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2023-10-19 13:05:14.870  INFO 161886 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-19 13:05:14.871  INFO 161886 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2023-10-19 13:05:15.235  INFO 161886 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-19 13:05:15.235  INFO 161886 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6010 ms
+2023-10-19 13:05:16.795  INFO 161886 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-19 13:05:16.964  INFO 161886 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-19 13:05:17.516  INFO 161886 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-19 13:05:17.846  INFO 161886 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-19 13:05:19.114  INFO 161886 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-19 13:05:19.179  INFO 161886 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-10-19 13:05:21.320  INFO 161886 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-19 13:05:21.359  INFO 161886 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 13:05:23.745  WARN 161886 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-19 13:05:27.619  WARN 161886 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-2023-10-16 17:33:18.577  INFO 12239 --- [main] c.v.v.VaccinationCenterApplication       : Started VaccinationCenterApplication in 152.066 seconds (JVM running for 153.318)
-2023-10-16 17:33:48.174  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2023-10-16 17:33:48.174  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2023-10-16 17:33:48.174  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2023-10-16 17:33:48.175  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2023-10-16 17:33:48.175  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2023-10-16 17:33:48.176  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2023-10-16 17:33:48.176  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2023-10-16 17:33:48.523  INFO 12239 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082: registering service...
-2023-10-16 17:33:48.592  INFO 12239 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - Re-registering apps/VACCINATION-CENTER-SERVICE
-2023-10-16 17:33:48.593  INFO 12239 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082: registering service...
-2023-10-16 17:33:48.612  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2023-10-16 17:33:48.776  INFO 12239 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - registration status: 204
-2023-10-16 17:33:48.780  INFO 12239 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - registration status: 204
-2023-10-16 17:34:18.615  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2023-10-16 17:34:18.615  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2023-10-16 17:34:18.616  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2023-10-16 17:34:18.616  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2023-10-16 17:34:18.616  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2023-10-16 17:34:18.616  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2023-10-16 17:34:18.616  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2023-10-16 17:34:18.633  INFO 12239 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2023-10-16 17:37:14.809  INFO 12239 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-16 17:42:09.264  INFO 12239 --- [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-10-16 17:42:09.266  INFO 12239 --- [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-10-16 17:42:09.279  INFO 12239 --- [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
-2023-10-16 17:42:09.722  INFO 12239 --- [http-nio-8082-exec-2] c.v.v.c.VaccinationCenterController      : Hi beofre rest call******************
-2023-10-16 17:42:10.115  WARN 12239 --- [http-nio-8082-exec-2] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: CITIZEN-SERVICE
-2023-10-16 17:42:10.150 ERROR 12239 --- [http-nio-8082-exec-2] c.v.v.c.VaccinationCenterController      : Hi with error  ******>>1<><><><>No instances available for CITIZEN-SERVICE
-2023-10-16 17:42:14.820  INFO 12239 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-16 17:43:31.485  INFO 12239 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application VACCINATION-CENTER-SERVICE with eureka with status DOWN
-2023-10-16 17:43:31.487  INFO 12239 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697458411487, current=DOWN, previous=UP]
-2023-10-16 17:43:31.489  INFO 12239 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082: registering service...
-2023-10-16 17:43:31.499  INFO 12239 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - registration status: 204
-2023-10-16 17:43:31.600  INFO 12239 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-10-16 17:43:31.623  INFO 12239 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-10-16 17:43:31.755  INFO 12239 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-10-16 17:43:31.800  INFO 12239 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2023-10-16 17:43:34.808  INFO 12239 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2023-10-16 17:43:34.817  INFO 12239 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused) stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
+Using generated security password: ece0cd32-3760-44f9-a1fd-7c84d372ec0d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-10-19 13:05:28.407  INFO 161886 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-19 13:05:28.483  INFO 161886 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@42a08547, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@579b1d86, org.springframework.security.web.context.SecurityContextPersistenceFilter@35ec675e, org.springframework.security.web.header.HeaderWriterFilter@b079fa2, org.springframework.web.filter.CorsFilter@5d28ac23, org.springframework.security.web.csrf.CsrfFilter@561e8bab, org.springframework.security.web.authentication.logout.LogoutFilter@2005d3e0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2ca93dee, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@751eb9a9, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6e18bc2f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@446dea16, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@26abee34, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1098c1b1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@28d48616, org.springframework.security.web.session.SessionManagementFilter@304e83a, org.springframework.security.web.access.ExceptionTranslationFilter@35f34ccc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@71c264e5]
+2023-10-19 13:05:28.925  INFO 161886 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-10-19 13:05:29.364  WARN 161886 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-10-19 13:05:29.457  INFO 161886 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-10-19 13:05:29.837  INFO 161886 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-10-19 13:05:29.876  INFO 161886 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-19 13:05:29.994  INFO 161886 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-10-19 13:05:30.005  INFO 161886 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-10-19 13:05:30.005  INFO 161886 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-10-19 13:05:30.005  INFO 161886 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-10-19 13:05:30.006  INFO 161886 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-10-19 13:05:30.015  INFO 161886 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-10-19 13:05:30.016  INFO 161886 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-10-19 13:05:31.533  INFO 161886 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-10-19 13:05:31.556  INFO 161886 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-10-19 13:05:31.594  INFO 161886 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-10-19 13:05:31.616  INFO 161886 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1697700931614 with initial instances count: 1
+2023-10-19 13:05:31.677  INFO 161886 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application VACCINATION-CENTER-SERVICE with eureka with status UP
+2023-10-19 13:05:31.678  INFO 161886 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697700931678, current=UP, previous=STARTING]
+2023-10-19 13:05:31.704  INFO 161886 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082: registering service...
+2023-10-19 13:05:31.926  INFO 161886 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2023-10-19 13:05:31.928  INFO 161886 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2023-10-19 13:05:32.063  INFO 161886 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - registration status: 204
+2023-10-19 13:05:32.127  INFO 161886 --- [main] c.v.v.VaccinationCenterApplication       : Started VaccinationCenterApplication in 24.441 seconds (JVM running for 25.468)
+2023-10-19 13:06:21.463  INFO 161886 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-19 13:06:21.464  INFO 161886 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-19 13:06:21.467  INFO 161886 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-10-19 13:06:43.657  INFO 161886 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application VACCINATION-CENTER-SERVICE with eureka with status DOWN
+2023-10-19 13:06:43.657  INFO 161886 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697701003657, current=DOWN, previous=UP]
+2023-10-19 13:06:43.660  INFO 161886 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082: registering service...
+2023-10-19 13:06:43.678  INFO 161886 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - registration status: 204
+2023-10-19 13:06:43.707  INFO 161886 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 13:06:43.718  INFO 161886 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-19 13:06:43.740  INFO 161886 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-19 13:06:43.743  INFO 161886 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-10-19 13:06:46.750  INFO 161886 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-10-19 13:06:46.758  INFO 161886 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - deregister  status: 200
+2023-10-19 13:06:46.767  INFO 161886 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-10-19 13:09:06.095  INFO 162441 --- [main] c.v.v.VaccinationCenterApplication       : Starting VaccinationCenterApplication using Java 11.0.19 on neosoft-Latitude-E7250 with PID 162441 (/home/neosoft/Downloads/MicroservicePOC/Microservices/vaccinationCenter/target/classes started by neosoft in /home/neosoft/Downloads/MicroservicePOC)
+2023-10-19 13:09:06.113  INFO 162441 --- [main] c.v.v.VaccinationCenterApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-19 13:09:10.356  INFO 162441 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-19 13:09:10.988  INFO 162441 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 607 ms. Found 1 JPA repository interfaces.
+2023-10-19 13:09:12.584  INFO 162441 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=dd52ad9c-43fc-396b-b51e-1f67302086a1
+2023-10-19 13:09:15.455  INFO 162441 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2023-10-19 13:09:15.483  INFO 162441 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-19 13:09:15.484  INFO 162441 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2023-10-19 13:09:15.885  INFO 162441 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-19 13:09:15.886  INFO 162441 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9570 ms
+2023-10-19 13:09:18.441  INFO 162441 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-19 13:09:18.531  INFO 162441 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-19 13:09:18.905  INFO 162441 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-19 13:09:19.091  INFO 162441 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-19 13:09:19.917  INFO 162441 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-19 13:09:19.946  INFO 162441 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-10-19 13:09:20.888  INFO 162441 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-19 13:09:20.900  INFO 162441 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 13:09:21.807  WARN 162441 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-19 13:09:23.856  WARN 162441 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 579d3506-cf5a-4a1d-b623-abb1f9b003b5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-10-19 13:09:24.123  INFO 162441 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-19 13:09:24.169  INFO 162441 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@e8c381e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38499139, org.springframework.security.web.context.SecurityContextPersistenceFilter@56d9ef05, org.springframework.security.web.header.HeaderWriterFilter@2835574b, org.springframework.web.filter.CorsFilter@240a9052, org.springframework.security.web.csrf.CsrfFilter@7334dcbe, org.springframework.security.web.authentication.logout.LogoutFilter@59b5251d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3f04847e, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@46823e8, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2ca93dee, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1ffcb4bb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@62325b44, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25198ead, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@430abcad, org.springframework.security.web.session.SessionManagementFilter@7859bd9a, org.springframework.security.web.access.ExceptionTranslationFilter@3a7e13c0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6354a50a]
+2023-10-19 13:09:24.426  INFO 162441 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-10-19 13:09:24.641  WARN 162441 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-10-19 13:09:24.705  INFO 162441 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-10-19 13:09:24.826  INFO 162441 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-10-19 13:09:24.832  INFO 162441 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-19 13:09:24.866  INFO 162441 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-10-19 13:09:24.866  INFO 162441 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-10-19 13:09:24.866  INFO 162441 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-10-19 13:09:24.866  INFO 162441 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-10-19 13:09:24.867  INFO 162441 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-10-19 13:09:24.867  INFO 162441 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-10-19 13:09:24.867  INFO 162441 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-10-19 13:09:25.400  INFO 162441 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-10-19 13:09:25.405  INFO 162441 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-10-19 13:09:25.409  INFO 162441 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-10-19 13:09:25.417  INFO 162441 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1697701165415 with initial instances count: 1
+2023-10-19 13:09:25.429  INFO 162441 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application VACCINATION-CENTER-SERVICE with eureka with status UP
+2023-10-19 13:09:25.430  INFO 162441 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697701165430, current=UP, previous=STARTING]
+2023-10-19 13:09:25.434  INFO 162441 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082: registering service...
+2023-10-19 13:09:25.485  INFO 162441 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2023-10-19 13:09:25.487  INFO 162441 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2023-10-19 13:09:25.576  INFO 162441 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - registration status: 204
+2023-10-19 13:09:25.580  INFO 162441 --- [main] c.v.v.VaccinationCenterApplication       : Started VaccinationCenterApplication in 21.998 seconds (JVM running for 23.876)
+2023-10-19 13:09:51.252  INFO 162441 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-19 13:09:51.253  INFO 162441 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-19 13:09:51.255  INFO 162441 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-19 13:14:24.871  INFO 162441 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-19 13:14:51.550  INFO 162441 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application VACCINATION-CENTER-SERVICE with eureka with status DOWN
+2023-10-19 13:14:51.551  INFO 162441 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697701491551, current=DOWN, previous=UP]
+2023-10-19 13:14:51.552  INFO 162441 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082: registering service...
+2023-10-19 13:14:51.560  INFO 162441 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - registration status: 204
+2023-10-19 13:14:51.628  INFO 162441 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 13:14:51.663  INFO 162441 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-19 13:14:51.721  INFO 162441 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-19 13:14:51.724  INFO 162441 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-10-19 13:14:54.729  INFO 162441 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-10-19 13:14:54.747  INFO 162441 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused) stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
@@ -395,8 +331,8 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
 	... 52 more
 
-2023-10-16 17:43:34.817  WARN 12239 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
-2023-10-16 17:43:34.828  INFO 12239 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused) stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
+2023-10-19 13:14:54.748  WARN 162441 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
+2023-10-19 13:14:54.759  INFO 162441 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused) stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
@@ -465,8 +401,8 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
 	... 53 more
 
-2023-10-16 17:43:34.829  WARN 12239 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
-2023-10-16 17:43:34.830 ERROR 12239 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - de-registration failedCannot execute request on any known server
+2023-10-19 13:14:54.760  WARN 162441 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
+2023-10-19 13:14:54.768 ERROR 162441 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VACCINATION-CENTER-SERVICE/10.0.103.136:VACCINATION-CENTER-SERVICE:8082 - de-registration failedCannot execute request on any known server
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
@@ -495,11 +431,11 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156) ~[spring-beans-5.3.30.jar:5.3.30]
 	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1112) ~[spring-context-5.3.30.jar:5.3.30]
 	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1078) ~[spring-context-5.3.30.jar:5.3.30]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-2.7.17-20231012.125736-40.jar:2.7.17-SNAPSHOT]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-2.7.17-20231017.081159-43.jar:2.7.17-SNAPSHOT]
 	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1024) ~[spring-context-5.3.30.jar:5.3.30]
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-2.7.17-20231012.125736-40.jar:2.7.17-SNAPSHOT]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-2.7.17-20231017.081159-43.jar:2.7.17-SNAPSHOT]
 	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-2.7.17-20231012.125736-40.jar:2.7.17-SNAPSHOT]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-2.7.17-20231017.081159-43.jar:2.7.17-SNAPSHOT]
 	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
 
-2023-10-16 17:43:34.842  INFO 12239 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-10-19 13:14:54.782  INFO 162441 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

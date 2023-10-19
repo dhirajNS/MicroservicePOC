@@ -1,55 +1,156 @@
-2023-10-16 17:42:43.984  INFO 14139 --- [main] c.c.C.CitizenServiceApplication          : Starting CitizenServiceApplication using Java 11.0.19 on neosoft-Latitude-E7250 with PID 14139 (/home/neosoft/Downloads/MicroservicePOC/Microservices/CitizenService/target/classes started by neosoft in /home/neosoft/Downloads/MicroservicePOC)
-2023-10-16 17:42:43.999  INFO 14139 --- [main] c.c.C.CitizenServiceApplication          : No active profile set, falling back to 1 default profile: "default"
-2023-10-16 17:42:46.742  INFO 14139 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-10-16 17:42:47.885  INFO 14139 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1084 ms. Found 1 JPA repository interfaces.
-2023-10-16 17:42:48.782  INFO 14139 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9bc53a10-6618-3f7b-8338-8dadeede909c
-2023-10-16 17:42:50.453  INFO 14139 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-10-16 17:42:50.475  INFO 14139 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-10-16 17:42:50.477  INFO 14139 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-2023-10-16 17:42:50.893  INFO 14139 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-10-16 17:42:50.903  INFO 14139 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6710 ms
-2023-10-16 17:42:51.382  INFO 14139 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-10-16 17:42:51.474  INFO 14139 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-10-16 17:42:52.197  INFO 14139 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-10-16 17:42:52.815  INFO 14139 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-10-16 17:42:54.371  INFO 14139 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-10-16 17:42:54.405  INFO 14139 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-10-16 17:42:56.300  INFO 14139 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-10-16 17:42:56.326  INFO 14139 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-10-16 17:42:57.737  WARN 14139 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-10-16 17:42:59.020  INFO 14139 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2023-10-16 17:42:59.324  WARN 14139 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2023-10-16 17:42:59.364  INFO 14139 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2023-10-16 17:42:59.616  INFO 14139 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2023-10-16 17:42:59.628  INFO 14139 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-16 17:42:59.684  INFO 14139 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2023-10-16 17:42:59.685  INFO 14139 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2023-10-16 17:42:59.685  INFO 14139 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2023-10-16 17:42:59.685  INFO 14139 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2023-10-16 17:42:59.685  INFO 14139 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2023-10-16 17:42:59.685  INFO 14139 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2023-10-16 17:42:59.685  INFO 14139 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2023-10-16 17:43:00.820  INFO 14139 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2023-10-16 17:43:00.829  INFO 14139 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2023-10-16 17:43:00.843  INFO 14139 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2023-10-16 17:43:00.867  INFO 14139 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1697458380863 with initial instances count: 1
-2023-10-16 17:43:00.883  INFO 14139 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application CITIZEN-SERVICE with eureka with status UP
-2023-10-16 17:43:00.885  INFO 14139 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697458380885, current=UP, previous=STARTING]
-2023-10-16 17:43:00.914  INFO 14139 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080: registering service...
-2023-10-16 17:43:01.180  INFO 14139 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-10-16 17:43:01.187  INFO 14139 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
-2023-10-16 17:43:01.224  INFO 14139 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080 - registration status: 204
-2023-10-16 17:43:01.289  INFO 14139 --- [main] c.c.C.CitizenServiceApplication          : Started CitizenServiceApplication in 19.121 seconds (JVM running for 20.461)
-2023-10-16 17:43:31.522  INFO 14139 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application CITIZEN-SERVICE with eureka with status DOWN
-2023-10-16 17:43:31.523  INFO 14139 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697458411523, current=DOWN, previous=UP]
-2023-10-16 17:43:31.523  INFO 14139 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080: registering service...
-2023-10-16 17:43:31.540  INFO 14139 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080 - registration status: 204
-2023-10-16 17:43:31.674  INFO 14139 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-10-16 17:43:31.685  INFO 14139 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-10-16 17:43:31.799  INFO 14139 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-10-16 17:43:31.801  INFO 14139 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2023-10-16 17:43:34.811  INFO 14139 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2023-10-16 17:43:34.824  INFO 14139 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused) stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
+2023-10-18 15:13:29.953  INFO 110781 --- [main] c.c.C.CitizenServiceApplication          : Starting CitizenServiceApplication using Java 11.0.19 on neosoft-Latitude-E7250 with PID 110781 (/home/neosoft/Downloads/MicroservicePOC/Microservices/CitizenService/target/classes started by neosoft in /home/neosoft/Downloads/MicroservicePOC)
+2023-10-18 15:13:29.976  INFO 110781 --- [main] c.c.C.CitizenServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-10-18 15:13:31.912  INFO 110781 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-18 15:13:32.303  INFO 110781 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 371 ms. Found 1 JPA repository interfaces.
+2023-10-18 15:13:32.903  INFO 110781 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9bc53a10-6618-3f7b-8338-8dadeede909c
+2023-10-18 15:13:33.881  INFO 110781 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-18 15:13:33.899  INFO 110781 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-18 15:13:33.900  INFO 110781 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2023-10-18 15:13:34.221  INFO 110781 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-18 15:13:34.222  INFO 110781 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4068 ms
+2023-10-18 15:13:34.658  INFO 110781 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-18 15:13:34.769  INFO 110781 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-18 15:13:35.230  INFO 110781 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-18 15:13:35.465  INFO 110781 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-18 15:13:36.658  INFO 110781 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-18 15:13:36.702  INFO 110781 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-10-18 15:13:38.432  INFO 110781 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-18 15:13:38.452  INFO 110781 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-18 15:13:39.743  WARN 110781 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-18 15:13:41.331  INFO 110781 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-10-18 15:13:41.952  WARN 110781 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-10-18 15:13:42.003  INFO 110781 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-10-18 15:13:42.449  INFO 110781 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-10-18 15:13:42.487  INFO 110781 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-18 15:13:42.656  INFO 110781 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-10-18 15:13:42.659  INFO 110781 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-10-18 15:13:42.660  INFO 110781 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-10-18 15:13:42.660  INFO 110781 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-10-18 15:13:42.663  INFO 110781 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-10-18 15:13:42.666  INFO 110781 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-10-18 15:13:42.667  INFO 110781 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-10-18 15:13:44.238  INFO 110781 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-10-18 15:13:44.262  INFO 110781 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-10-18 15:13:44.275  INFO 110781 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-10-18 15:13:44.322  INFO 110781 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1697622224305 with initial instances count: 1
+2023-10-18 15:13:44.368  INFO 110781 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application CITIZEN-SERVICE with eureka with status UP
+2023-10-18 15:13:44.370  INFO 110781 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697622224370, current=UP, previous=STARTING]
+2023-10-18 15:13:44.377  INFO 110781 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080: registering service...
+2023-10-18 15:13:44.627  INFO 110781 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-18 15:13:44.635  INFO 110781 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2023-10-18 15:13:44.738  INFO 110781 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080 - registration status: 204
+2023-10-18 15:13:44.823  INFO 110781 --- [main] c.c.C.CitizenServiceApplication          : Started CitizenServiceApplication in 16.598 seconds (JVM running for 17.613)
+2023-10-18 15:15:05.409  INFO 110781 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-18 15:15:05.409  INFO 110781 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-18 15:15:05.414  INFO 110781 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2023-10-18 15:15:05.492  INFO 110781 --- [http-nio-8080-exec-1] c.c.C.controller.CitizenController       : Before success in Citizen
+2023-10-18 15:15:05.800 ERROR 110781 --- [http-nio-8080-exec-1] c.c.C.controller.CitizenController       : Something went wrong>>>null
+2023-10-18 15:15:07.860  INFO 110781 --- [http-nio-8080-exec-2] c.c.C.controller.CitizenController       : Before success in Citizen
+2023-10-18 15:15:07.870 ERROR 110781 --- [http-nio-8080-exec-2] c.c.C.controller.CitizenController       : Something went wrong>>>null
+2023-10-18 15:15:09.892  INFO 110781 --- [http-nio-8080-exec-3] c.c.C.controller.CitizenController       : Before success in Citizen
+2023-10-18 15:15:09.902 ERROR 110781 --- [http-nio-8080-exec-3] c.c.C.controller.CitizenController       : Something went wrong>>>null
+2023-10-18 15:15:11.919  INFO 110781 --- [http-nio-8080-exec-4] c.c.C.controller.CitizenController       : Before success in Citizen
+2023-10-18 15:15:11.925 ERROR 110781 --- [http-nio-8080-exec-4] c.c.C.controller.CitizenController       : Something went wrong>>>null
+2023-10-18 15:15:13.940  INFO 110781 --- [http-nio-8080-exec-5] c.c.C.controller.CitizenController       : Before success in Citizen
+2023-10-18 15:15:13.944 ERROR 110781 --- [http-nio-8080-exec-5] c.c.C.controller.CitizenController       : Something went wrong>>>null
+2023-10-18 15:16:00.544  INFO 110781 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application CITIZEN-SERVICE with eureka with status DOWN
+2023-10-18 15:16:00.545  INFO 110781 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697622360545, current=DOWN, previous=UP]
+2023-10-18 15:16:00.545  INFO 110781 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080: registering service...
+2023-10-18 15:16:00.568  INFO 110781 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080 - registration status: 204
+2023-10-18 15:16:00.607  INFO 110781 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-18 15:16:00.610  INFO 110781 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-18 15:16:00.630  INFO 110781 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-18 15:16:00.631  INFO 110781 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-10-18 15:16:03.634  INFO 110781 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-10-18 15:16:03.644  INFO 110781 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080 - deregister  status: 200
+2023-10-18 15:16:03.659  INFO 110781 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-10-18 15:16:15.988  INFO 111352 --- [main] c.c.C.CitizenServiceApplication          : Starting CitizenServiceApplication using Java 11.0.19 on neosoft-Latitude-E7250 with PID 111352 (/home/neosoft/Downloads/MicroservicePOC/Microservices/CitizenService/target/classes started by neosoft in /home/neosoft/Downloads/MicroservicePOC)
+2023-10-18 15:16:16.000  INFO 111352 --- [main] c.c.C.CitizenServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-10-18 15:16:18.532  INFO 111352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-18 15:16:19.107  INFO 111352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 533 ms. Found 1 JPA repository interfaces.
+2023-10-18 15:16:19.674  INFO 111352 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9bc53a10-6618-3f7b-8338-8dadeede909c
+2023-10-18 15:16:20.602  INFO 111352 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-18 15:16:20.619  INFO 111352 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-18 15:16:20.620  INFO 111352 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2023-10-18 15:16:20.883  INFO 111352 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-18 15:16:20.884  INFO 111352 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4730 ms
+2023-10-18 15:16:21.364  INFO 111352 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-18 15:16:21.481  INFO 111352 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-18 15:16:21.801  INFO 111352 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-18 15:16:21.994  INFO 111352 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-18 15:16:22.568  INFO 111352 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-18 15:16:22.603  INFO 111352 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-10-18 15:16:23.817  INFO 111352 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-18 15:16:23.827  INFO 111352 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-18 15:16:24.639  WARN 111352 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-18 15:16:25.483  INFO 111352 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-10-18 15:16:25.829  WARN 111352 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-10-18 15:16:25.885  INFO 111352 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-10-18 15:16:26.158  INFO 111352 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-10-18 15:16:26.169  INFO 111352 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-18 15:16:26.222  INFO 111352 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-10-18 15:16:26.223  INFO 111352 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-10-18 15:16:26.223  INFO 111352 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-10-18 15:16:26.223  INFO 111352 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-10-18 15:16:26.223  INFO 111352 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-10-18 15:16:26.224  INFO 111352 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-10-18 15:16:26.224  INFO 111352 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-10-18 15:16:26.879  INFO 111352 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-10-18 15:16:26.886  INFO 111352 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-10-18 15:16:26.890  INFO 111352 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-10-18 15:16:26.906  INFO 111352 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1697622386904 with initial instances count: 4
+2023-10-18 15:16:26.910  INFO 111352 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application CITIZEN-SERVICE with eureka with status UP
+2023-10-18 15:16:26.912  INFO 111352 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697622386912, current=UP, previous=STARTING]
+2023-10-18 15:16:26.915  INFO 111352 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080: registering service...
+2023-10-18 15:16:26.983  INFO 111352 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-18 15:16:26.985  INFO 111352 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2023-10-18 15:16:27.012  INFO 111352 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080 - registration status: 204
+2023-10-18 15:16:27.039  INFO 111352 --- [main] c.c.C.CitizenServiceApplication          : Started CitizenServiceApplication in 12.856 seconds (JVM running for 14.249)
+2023-10-18 15:17:18.846  INFO 111352 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-18 15:17:18.846  INFO 111352 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-18 15:17:18.847  INFO 111352 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-18 15:17:18.902  INFO 111352 --- [http-nio-8080-exec-1] c.c.C.controller.CitizenController       : Before success in Citizen
+2023-10-18 15:17:19.100  INFO 111352 --- [http-nio-8080-exec-1] c.c.C.controller.CitizenController       : After success in Citizen
+2023-10-18 15:21:26.230  INFO 111352 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-18 15:24:02.773  INFO 111352 --- [http-nio-8080-exec-3] c.c.C.controller.CitizenController       : Before success in Citizen
+2023-10-18 15:24:02.784  INFO 111352 --- [http-nio-8080-exec-3] c.c.C.controller.CitizenController       : After success in Citizen
+2023-10-18 15:26:26.232  INFO 111352 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-18 15:26:28.185  INFO 111352 --- [http-nio-8080-exec-5] c.c.C.controller.CitizenController       : Before success in Citizen
+2023-10-18 15:26:28.188  INFO 111352 --- [http-nio-8080-exec-5] c.c.C.controller.CitizenController       : After success in Citizen
+2023-10-18 15:29:04.230  INFO 111352 --- [http-nio-8080-exec-7] c.c.C.controller.CitizenController       : Before success in Citizen
+2023-10-18 15:29:04.238  INFO 111352 --- [http-nio-8080-exec-7] c.c.C.controller.CitizenController       : After success in Citizen
+2023-10-18 15:29:12.449  INFO 111352 --- [http-nio-8080-exec-8] c.c.C.controller.CitizenController       : Before success in Citizen
+2023-10-18 15:29:12.454  INFO 111352 --- [http-nio-8080-exec-8] c.c.C.controller.CitizenController       : After success in Citizen
+2023-10-18 15:30:12.860  INFO 111352 --- [http-nio-8080-exec-1] c.c.C.controller.CitizenController       : Before success in Citizen
+2023-10-18 15:30:12.865  INFO 111352 --- [http-nio-8080-exec-1] c.c.C.controller.CitizenController       : After success in Citizen
+2023-10-18 15:30:29.557  INFO 111352 --- [http-nio-8080-exec-2] c.c.C.controller.CitizenController       : Before success in Citizen
+2023-10-18 15:30:29.562  INFO 111352 --- [http-nio-8080-exec-2] c.c.C.controller.CitizenController       : After success in Citizen
+2023-10-18 15:30:35.294  INFO 111352 --- [http-nio-8080-exec-3] c.c.C.controller.CitizenController       : Before success in Citizen
+2023-10-18 15:30:35.300  INFO 111352 --- [http-nio-8080-exec-3] c.c.C.controller.CitizenController       : After success in Citizen
+2023-10-18 15:30:46.767  INFO 111352 --- [http-nio-8080-exec-4] c.c.C.controller.CitizenController       : Before success in Citizen
+2023-10-18 15:30:46.773  INFO 111352 --- [http-nio-8080-exec-4] c.c.C.controller.CitizenController       : After success in Citizen
+2023-10-18 15:31:26.233  INFO 111352 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-18 15:36:26.235  INFO 111352 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-18 15:39:07.342  INFO 111352 --- [http-nio-8080-exec-7] c.c.C.controller.CitizenController       : Before success in Citizen
+2023-10-18 15:39:07.347  INFO 111352 --- [http-nio-8080-exec-7] c.c.C.controller.CitizenController       : After success in Citizen
+2023-10-18 15:41:26.236  INFO 111352 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-18 15:46:26.237  INFO 111352 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-18 15:51:26.237  INFO 111352 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-18 15:56:26.238  INFO 111352 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-18 16:01:26.240  INFO 111352 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-18 16:06:26.241  INFO 111352 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-18 16:11:26.242  INFO 111352 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-18 16:16:26.243  INFO 111352 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-18 16:18:39.607  INFO 111352 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application CITIZEN-SERVICE with eureka with status DOWN
+2023-10-18 16:18:39.608  INFO 111352 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697626119608, current=DOWN, previous=UP]
+2023-10-18 16:18:39.611  INFO 111352 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080: registering service...
+2023-10-18 16:18:39.643  INFO 111352 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080 - registration status: 204
+2023-10-18 16:18:39.689  INFO 111352 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-18 16:18:39.703  INFO 111352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-18 16:18:39.752  INFO 111352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-18 16:18:39.752  INFO 111352 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-10-18 16:18:42.755  INFO 111352 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-10-18 16:18:42.780  INFO 111352 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused) stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
@@ -117,8 +218,8 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
 	... 52 more
 
-2023-10-16 17:43:34.825  WARN 14139 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
-2023-10-16 17:43:34.840  INFO 14139 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused) stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
+2023-10-18 16:18:42.780  WARN 111352 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
+2023-10-18 16:18:42.802  INFO 111352 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused) stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
@@ -187,8 +288,8 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
 	... 53 more
 
-2023-10-16 17:43:34.841  WARN 14139 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
-2023-10-16 17:43:34.852 ERROR 14139 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080 - de-registration failedCannot execute request on any known server
+2023-10-18 16:18:42.803  WARN 111352 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080": Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused); nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
+2023-10-18 16:18:42.824 ERROR 111352 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CITIZEN-SERVICE/10.0.103.136:CITIZEN-SERVICE:8080 - de-registration failedCannot execute request on any known server
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
@@ -217,11 +318,11 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156) ~[spring-beans-5.3.30.jar:5.3.30]
 	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1112) ~[spring-context-5.3.30.jar:5.3.30]
 	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1078) ~[spring-context-5.3.30.jar:5.3.30]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-2.7.17-20231012.125736-40.jar:2.7.17-SNAPSHOT]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-2.7.17-20231017.081159-43.jar:2.7.17-SNAPSHOT]
 	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1024) ~[spring-context-5.3.30.jar:5.3.30]
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-2.7.17-20231012.125736-40.jar:2.7.17-SNAPSHOT]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-2.7.17-20231017.081159-43.jar:2.7.17-SNAPSHOT]
 	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-2.7.17-20231012.125736-40.jar:2.7.17-SNAPSHOT]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-2.7.17-20231017.081159-43.jar:2.7.17-SNAPSHOT]
 	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
 
-2023-10-16 17:43:34.863  INFO 14139 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-10-18 16:18:42.857  INFO 111352 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

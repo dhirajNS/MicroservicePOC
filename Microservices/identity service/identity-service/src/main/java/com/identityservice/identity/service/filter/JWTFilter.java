@@ -11,11 +11,13 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Component
-public class JwtFilter extends OncePerRequestFilter {
+public class JWTFilter extends OncePerRequestFilter {
 
     @Autowired
     private JwtService jwtUtil;
@@ -24,7 +26,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
 
     @Override
-    protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException, ServletException, IOException {
 
         String authorizationHeader = httpServletRequest.getHeader("Authorization");
 
@@ -40,13 +42,16 @@ public class JwtFilter extends OncePerRequestFilter {
 
             UserDetails userDetails = service.loadUserByUsername(userName);
 
-            if (jwtUtil.validateToken(token)) {
-
+            try {
+                jwtUtil.validateToken(token);
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
                         new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 usernamePasswordAuthenticationToken
                         .setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
                 SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+            }catch(Exception ex){
+                System.out.println("invalid access...!");
+                throw new RuntimeException("un authorized access to application");
             }
         }
         filterChain.doFilter(httpServletRequest, httpServletResponse);

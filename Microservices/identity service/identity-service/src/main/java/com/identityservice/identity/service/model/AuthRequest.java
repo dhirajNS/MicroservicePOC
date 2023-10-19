@@ -14,6 +14,7 @@ public class AuthRequest {
 
     private String username;
     private String password;
-    private String role;
+    //private String role;
+    private List<String> role;
 
 }

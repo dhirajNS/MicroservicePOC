@@ -46,10 +46,10 @@ public class VaccinationCenterController {
     //@CircuitBreaker(name=VACCINE_SERVICE,fallbackMethod = "handleFallBack")
     //@Retry(name = VACCINE_SERVICE,fallbackMethod = "handleFallBack")
     @Retry(name = VACCINE_SERVICE)     //when using exception handling and there is no fallback in retry
-    @PreAuthorize("hasAuthority('ROLE_USER')")
     public ResponseEntity<RequiredResponse> getAllDadaBasedonCenterId(@PathVariable Integer id){
 
             RequiredResponse requiredResponse = new RequiredResponse();
+        logger.info("inside getAllDadaBasedonCenterId>>>>>>>>>");
         //try {
             //1st get vaccination center detail
             VaccinationDB center = centerRepo.findById(id).get();
@@ -64,7 +64,7 @@ public class VaccinationCenterController {
 //        }catch(Exception e){
 //            logger.error("Hi with error  ******>>"+id+"<><><><>"+e.getMessage());
 //            return new ResponseEntity<RequiredResponse>(requiredResponse, HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
+//        }//@PreAuthorize("hasRole('ROLE_USER')")
     }
 
 //    public ResponseEntity<RequiredResponse> handleFallBack(@PathVariable Integer id){
