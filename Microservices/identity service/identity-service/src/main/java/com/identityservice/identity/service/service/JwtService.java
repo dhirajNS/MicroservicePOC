@@ -5,6 +5,8 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +21,7 @@ import java.util.stream.Collectors;
 @Component
 public class JwtService {
     public static final String SECRET = "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437";
+    public static final Logger logger= LoggerFactory.getLogger(JwtService.class);
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }
@@ -45,6 +48,7 @@ public class JwtService {
         return Keys.hmacShaKeyFor(keyBytes);
     }
     public void validateToken(final String token) {
+        logger.info("inside valid token of IDENTITYSERVICE>>>>>>>");
         Jwts.parserBuilder().setSigningKey(getSignKey()).build().parseClaimsJws(token);
     }
 }

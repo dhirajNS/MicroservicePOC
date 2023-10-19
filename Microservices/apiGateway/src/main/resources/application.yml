@@ -24,6 +24,7 @@ spring:
           filters:
             - AuthenticationFilter
 
+
         - id: IDENTITY-SERVICE
           uri:
             lb://IDENTITY-SERVICE
