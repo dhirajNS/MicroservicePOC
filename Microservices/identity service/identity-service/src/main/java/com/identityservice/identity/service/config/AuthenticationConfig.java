@@ -19,7 +19,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity
+@EnableGlobalMethodSecurity(securedEnabled = true, jsr250Enabled = true)
 public class AuthenticationConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     JWTFilter jwtFilter;
@@ -28,6 +28,7 @@ public class AuthenticationConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests()
                 .antMatchers("/auth/register", "/auth/validate","/auth/token").permitAll()
+                .antMatchers("/vaccinationcenter/id/**").hasRole("USER")
                 .anyRequest().authenticated()
                 .and().exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
