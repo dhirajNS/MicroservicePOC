@@ -36,6 +36,7 @@ public class AuthController {
     @PostMapping("/token")
     public String getToken(@RequestBody AuthRequest authRequest) {
         //String role=authRequest.getRole();
+        System.out.println("in identity controller");
         List<String> roles=authRequest.getRole();
         Collection<SimpleGrantedAuthority> authorities = roles.stream()
                 .map(SimpleGrantedAuthority::new)
