@@ -30,8 +30,8 @@ public class CitizenController {
         try {
             logger.info("Before success in Citizen");
             List<Citizen> listCitizen = repo.findByVaccinationCenterId(id);
-            Citizen citizen=null;   //purposely added exception for recreating null pointer exception
-            citizen.setId(1);
+//            Citizen citizen=null;   //purposely added exception for recreating null pointer exception
+//            citizen.setId(1);
             logger.info("After success in Citizen");
             return new ResponseEntity<>(listCitizen, HttpStatus.OK);
         }catch (Exception e) {

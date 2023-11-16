@@ -3,7 +3,7 @@ package com.vaccinationCenter.vaccinationCenter.controller;
 //import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.vaccinationCenter.vaccinationCenter.entity.VaccinationDB;
 import com.vaccinationCenter.vaccinationCenter.model.Citizen;
-import com.vaccinationCenter.vaccinationCenter.model.CitizenWrapper;
+//import com.vaccinationCenter.vaccinationCenter.model.CitizenWrapper;
 import com.vaccinationCenter.vaccinationCenter.model.RequiredResponse;
 import com.vaccinationCenter.vaccinationCenter.repository.CenterRepo;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
@@ -16,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -45,6 +46,7 @@ public class VaccinationCenterController {
     //@CircuitBreaker(name=VACCINE_SERVICE,fallbackMethod = "handleFallBack")
     //@Retry(name = VACCINE_SERVICE,fallbackMethod = "handleFallBack")
     @Retry(name = VACCINE_SERVICE)     //when using exception handling and there is no fallback in retry
+    @RolesAllowed("user")
     public ResponseEntity<RequiredResponse> getAllDadaBasedonCenterId(@PathVariable Integer id){
 
             RequiredResponse requiredResponse = new RequiredResponse();

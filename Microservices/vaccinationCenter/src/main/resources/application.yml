@@ -49,3 +49,10 @@ management:
   endpoint:
     health:
       show-details: always
+
+keycloak:
+  auth-server-url: http://localhost:8090/auth
+  realm: MicroserviceRealm
+  resource: microservice-api-gateway
+  public-client: true
+  bearer-only: true
